@@ -11,8 +11,10 @@ connect();
 app.use(bodyParser.json());
 app.use(cors());
 
-app.use("/api", cors(), postTodo);
-app.use("/api", cors(), getTodo);
+app.use("/api", postTodo);
+app.use("/api", getTodo);
+
+
 
 app.use("/", ...swaggerMiddleware());
 

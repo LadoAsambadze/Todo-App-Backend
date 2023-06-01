@@ -1,6 +1,5 @@
 import express from "express";
-import {  postTodo } from "../controllers/project-controller.js";
+import { postTodo } from "../controllers/project-controller.js";
 
 export const postTodoRouter = express.Router();
-postTodoRouter.post("/todos", postTodo);
-
+postTodoRouter.post("/posttodos", postTodo);

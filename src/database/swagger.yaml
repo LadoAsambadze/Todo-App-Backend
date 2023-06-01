@@ -8,10 +8,10 @@ servers:
   - url: http://localhost:3000/api
     description: local server
 paths:
-  /todos:
+  /gettodos:
     get:
       tags:
-        - Todos
+        - PostTodos
       responses:
         "200":
           description: Successfully fetched
@@ -20,4 +20,20 @@ paths:
               schema:
                 type: array
                 items:
-                  type: string, boolean
+                  type: string
+  /posttodos:
+    post:
+      tags:
+        - PostTodos
+      responses:
+        "200":
+          description: Successfully fetched
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  inputText:
+                    type: string
+                  inputButton:
+                    type: boolean
