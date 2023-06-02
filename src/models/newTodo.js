@@ -2,11 +2,13 @@ import { Schema, model } from "mongoose";
 import { v4 as uuidv4 } from "uuid";
 
 const todoAdd = new Schema({
-  inputText: {
+  value: {
     type: Schema.Types.String,
+    required: true,
   },
-  inputButton: {
+  active: {
     type: Schema.Types.Boolean,
+    required: true,
   },
   id: {
     type: Schema.Types.String,

@@ -24,16 +24,69 @@ paths:
   /posttodos:
     post:
       tags:
-        - PostTodos
+        - Todo
+      requestBody:
+        description: add todo
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                value:
+                  type: string
+                active:
+                  type: boolean
       responses:
         "200":
-          description: Successfully fetched
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  inputText:
-                    type: string
-                  inputButton:
-                    type: boolean
+          description: ToDo add
+  /deletetodo/{id}:
+    delete:
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+      tags:
+        - Todos
+      responses:
+        "200":
+          description: cart deleted
+  paths:
+  /puttodo/{id}:
+    put:
+      summary: Update a ToDo item
+      tags:
+        - Todo
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+        - in: body
+          name: todo
+          description: Updated todo object
+          required: true
+          schema:
+            type: object
+            properties:
+              active:
+                type: boolean
+      responses:
+        "200":
+          description: ToDo updated successfully
+  /dltcomp/{active}:
+    delete:
+      parameters:
+        - in: path
+          name: active
+          schema:
+            type: string
+          required: true
+      tags:
+        - Todos
+      responses:
+        "200":
+          description: cart deleted
