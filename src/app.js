@@ -1,19 +1,19 @@
 import express from "express";
 import bodyParser from "body-parser";
-import connect from "./src/database/mongo.js";
+import connect from "./database/mongo.js";
 import dotenv from "dotenv";
 import {
   deleteCompleted,
   getTodo,
   postTodo,
   toggleTodo,
-} from "./src/controllers/project-controller.js";
-import swaggerMiddleware from "./src/middlewares/swagger-middleware.js";
+} from "./controllers/project-controller.js";
+import swaggerMiddleware from "./middlewares/swagger-middleware.js";
 import cors from "cors";
-import { postTodoRouter } from "./src/routes/postTodo-router.js";
-import { getTodoRouter } from "./src/routes/getTodo-router.js";
-import { deleteTodoRouter } from "./src/routes/delete-todo.js";
-import { toggleRoute } from "./src/routes/toggle-todo.js";
+import { postTodoRouter } from "./routes/postTodo-router.js";
+import { getTodoRouter } from "./routes/getTodo-router.js";
+import { deleteTodoRouter } from "./routes/delete-todo.js";
+import { toggleRoute } from "./routes/toggle-todo.js";
 
 dotenv.config();
 const app = express();
