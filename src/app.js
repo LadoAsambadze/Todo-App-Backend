@@ -13,7 +13,6 @@ import cors from "cors";
 import { postTodoRouter } from "./routes/postTodo-router.js";
 import { getTodoRouter } from "./routes/getTodo-router.js";
 import { deleteTodoRouter } from "./routes/delete-todo.js";
-import { toggleRoute } from "./routes/toggle-todo.js";
 
 dotenv.config();
 const app = express();
