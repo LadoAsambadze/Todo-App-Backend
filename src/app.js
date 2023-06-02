@@ -24,7 +24,7 @@ app.use("/api", postTodoRouter);
 app.use("/api", getTodoRouter);
 app.use("/api", deleteTodoRouter);
 app.use("/api/puttodo/:id", toggleTodo);
-app.use("/api/dltcomp/:id", deleteCompleted);
+app.use("/api/dltcomp", deleteCompleted);
 
 app.use("/", ...swaggerMiddleware());
 

@@ -77,14 +77,8 @@ paths:
       responses:
         "200":
           description: ToDo updated successfully
-  /dltcomp/{active}:
+  /dltcomp:
     delete:
-      parameters:
-        - in: path
-          name: active
-          schema:
-            type: string
-          required: true
       tags:
         - Todos
       responses:
